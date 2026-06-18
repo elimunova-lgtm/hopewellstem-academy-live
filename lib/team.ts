@@ -1,3 +1,5 @@
+import { cldUrl } from "./cloudinary";
+
 export type Person = {
   name: string;
   role: string;
@@ -5,58 +7,58 @@ export type Person = {
   bioImage?: string;
 };
 
-const img = (file: string) => `/images/${file}`;
+const img = (publicId: string) => cldUrl(publicId);
 
 export const directors: Person[] = [
   {
     name: "Mr. Ezekiel Manyara",
     role: "General Director",
-    image: img("easy.jpg"),
-    bioImage: img("ezzym.jpg"),
+    image: img("stemhsa/gallery/easy"),
+    bioImage: img("stemhsa/gallery/ezzym"),
   },
   {
     name: "Ms. Susan Nyawira",
     role: "General Director",
-    image: img("nyawira.jpg"),
-    bioImage: img("mrs.nyawira.jpg"),
+    image: img("stemhsa/gallery/nyawira"),
+    bioImage: img("stemhsa/gallery/mrs.nyawira"),
   },
   {
     name: "Dr. Mary Mwangi",
     role: "STEM Trainer & Director — Curriculum, Instruction & Assessment",
-    image: img("dr.jpg"),
-    bioImage: img("dr. mary.jpg"),
+    image: img("stemhsa/gallery/dr"),
+    bioImage: img("stemhsa/gallery/dr. mary"),
   },
 ];
 
 export const teachingStaff: Person[] = [
-  { name: "Md. Purity Njeri", role: "Head Teacher", image: img("purity.png") },
+  { name: "Md. Purity Njeri", role: "Head Teacher", image: img("stemhsa/gallery/purity") },
   {
     name: "Mr. Daniel Watene",
     role: "Deputy Head Teacher & Class Teacher, Grade 1",
-    image: img("daniel.png"),
+    image: img("stemhsa/gallery/daniel"),
   },
-  { name: "Md. Agnes Nduta", role: "Class Teacher, PP2", image: img("agnes.png") },
+  { name: "Md. Agnes Nduta", role: "Class Teacher, PP2", image: img("stemhsa/gallery/agnes") },
   { name: "Md. Irene", role: "Class Teacher, PP1" },
-  { name: "Mr. Timothy Mbugua", role: "Class Teacher, Grade 5", image: img("Timo.png") },
+  { name: "Mr. Timothy Mbugua", role: "Class Teacher, Grade 5", image: img("stemhsa/gallery/Timo") },
   { name: "Mr. John Nzau", role: "Class Teacher, Grade 3" },
-  { name: "Md. Beth Waithera", role: "Class Teacher, Grade 2", image: img("beth.png") },
-  { name: "Mr. Samuel Kairu", role: "Class Teacher, Grade 7", image: img("kairu.png") },
-  { name: "Md. Mary", role: "Class Teacher, Grade 8", image: img("md mary.png") },
-  { name: "Mr. Joseph Mwaura", role: "ICT & STEM Instructor", image: img("josee.png") },
-  { name: "Mr. Larry Marongo", role: "ICT & STEM Instructor", image: img("larry.png") },
+  { name: "Md. Beth Waithera", role: "Class Teacher, Grade 2", image: img("stemhsa/gallery/beth") },
+  { name: "Mr. Samuel Kairu", role: "Class Teacher, Grade 7", image: img("stemhsa/gallery/kairu") },
+  { name: "Md. Mary", role: "Class Teacher, Grade 8", image: img("stemhsa/gallery/md mary") },
+  { name: "Mr. Joseph Mwaura", role: "ICT & STEM Instructor", image: img("stemhsa/gallery/josee") },
+  { name: "Mr. Larry Marongo", role: "ICT & STEM Instructor", image: img("stemhsa/gallery/larry") },
   { name: "Mr. James M.", role: "Class Teacher, Grade 9" },
   { name: "Md. Annex Onduso", role: "Class Teacher, Grade 4" },
   { name: "Md. Esther Nyambura", role: "Class Teacher, Grade 6" },
-  { name: "Md. Anastacia Rotich", role: "Class Teacher, PP1", image: img("anastacia.png") },
+  { name: "Md. Anastacia Rotich", role: "Class Teacher, PP1", image: img("stemhsa/gallery/anastacia") },
 ];
 
 export const nonTeachingStaff: Person[] = [
-  { name: "Md. Anne Boaz", role: "Secretary", image: img("ann.png") },
-  { name: "Md. Maureen Mwaura", role: "In-charge of News & Media", image: img("maureen.png") },
-  { name: "Md. Sylvia Wangeci", role: "Supervisor", image: img("sylivia.png") },
-  { name: "Md. Sarah Kibunja", role: "Cateress", image: img("sarah.png") },
-  { name: "Mr. Vincent", role: "Gatekeeper", image: img("vinny.png") },
-  { name: "Mr. David", role: "Grounds Keeper", image: img("davy.png") },
+  { name: "Md. Anne Boaz", role: "Secretary", image: img("stemhsa/gallery/ann") },
+  { name: "Md. Maureen Mwaura", role: "In-charge of News & Media", image: img("stemhsa/gallery/maureen") },
+  { name: "Md. Sylvia Wangeci", role: "Supervisor", image: img("stemhsa/gallery/sylivia") },
+  { name: "Md. Sarah Kibunja", role: "Cateress", image: img("stemhsa/gallery/sarah") },
+  { name: "Mr. Vincent", role: "Gatekeeper", image: img("stemhsa/gallery/vinny") },
+  { name: "Mr. David", role: "Grounds Keeper", image: img("stemhsa/gallery/davy") },
   { name: "Mr. Evans", role: "Grounds Keeper" },
 ];
 
