@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-display: "Poppins", Georgia, serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-brand text-white;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand text-white shadow-card hover:-translate-y-0.5 hover:bg-brand-900 hover:shadow-card-hover;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-brand text-brand hover:bg-brand hover:text-white;
+  }
+
+  .btn-white {
+    @apply btn bg-white text-brand shadow-card hover:-translate-y-0.5 hover:bg-brand-50;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-eyebrow {
+    @apply mb-3 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-accent;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold text-brand sm:text-4xl lg:text-[2.75rem] lg:leading-tight;
+  }
+
+  .prose-page {
+    @apply space-y-4 text-base leading-relaxed text-slate-600;
+  }
+
+  .footer-heading {
+    @apply relative mb-5 pb-2 font-display text-lg font-bold;
+  }
+
+  .footer-heading::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-0.5 w-10 bg-accent;
+  }
+}
+
+/* Hide scrollbar utility used by ticker columns */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
