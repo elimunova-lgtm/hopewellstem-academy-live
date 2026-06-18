@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     "Explore life at Hopewell STEM Academy — STEM projects, sports, robotics, learning and community moments.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function GalleryPage() {
   const flyers = await getPublishedFlyers();
 
