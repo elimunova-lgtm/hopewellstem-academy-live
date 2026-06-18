@@ -43,7 +43,7 @@ export function cldUrl(
   else              t.push("f_auto");
 
   const transforms = t.join(",") + "/";
-  return `https://res.cloudinary.com/${CLOUD}/image/upload/${transforms}${publicId}`;
+  return `https://res.cloudinary.com/${CLOUD}/image/upload/${transforms}${encodeURIComponent(publicId).replace(/%2F/g, "/")}`;
 }
 
 /** Build a Cloudinary URL for raw files (PDFs, etc.). */

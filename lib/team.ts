@@ -26,7 +26,7 @@ export const directors: Person[] = [
     name: "Dr. Mary Mwangi",
     role: "STEM Trainer & Director — Curriculum, Instruction & Assessment",
     image: img("stemhsa/gallery/dr"),
-    bioImage: img("stemhsa/gallery/dr. mary"),
+    bioImage: img("stemhsa/gallery/dr-mary"),
   },
 ];
 
@@ -43,7 +43,7 @@ export const teachingStaff: Person[] = [
   { name: "Mr. John Nzau", role: "Class Teacher, Grade 3" },
   { name: "Md. Beth Waithera", role: "Class Teacher, Grade 2", image: img("stemhsa/gallery/beth") },
   { name: "Mr. Samuel Kairu", role: "Class Teacher, Grade 7", image: img("stemhsa/gallery/kairu") },
-  { name: "Md. Mary", role: "Class Teacher, Grade 8", image: img("stemhsa/gallery/md mary") },
+  { name: "Md. Mary", role: "Class Teacher, Grade 8", image: img("stemhsa/gallery/md-mary") },
   { name: "Mr. Joseph Mwaura", role: "ICT & STEM Instructor", image: img("stemhsa/gallery/josee") },
   { name: "Mr. Larry Marongo", role: "ICT & STEM Instructor", image: img("stemhsa/gallery/larry") },
   { name: "Mr. James M.", role: "Class Teacher, Grade 9" },
