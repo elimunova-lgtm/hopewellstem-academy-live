@@ -58,13 +58,8 @@ export async function getPublishedNews(): Promise<PublicNewsItem[]> {
     });
 
     if (rows.length === 0) {
-      return staticNews.map((item, index) => ({
-        id: `static-news-${index}`,
-        title: item.title,
-        date: item.date,
-        excerpt: item.excerpt,
-        image: item.image,
-      }));
+      // DB is configured and returned nothing — user deleted all items, respect that.
+      return [];
     }
 
     return rows.map((row) => ({
@@ -105,15 +100,8 @@ export async function getPublishedEvents(): Promise<PublicEventItem[]> {
     });
 
     if (rows.length === 0) {
-      return staticEvents.map((item, index) => ({
-        id: `static-event-${index}`,
-        title: item.title,
-        date: item.date,
-        time: item.time,
-        description: item.description,
-        location: item.location,
-        image: item.image,
-      }));
+      // DB is configured and returned nothing — user deleted all items, respect that.
+      return [];
     }
 
     return rows.map((row) => ({
