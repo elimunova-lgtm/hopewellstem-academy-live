@@ -1,5 +1,6 @@
 import { news as staticNews, events as staticEvents } from "@/lib/content";
 import { prisma } from "@/lib/prisma";
+import { cldUrl } from "@/lib/cloudinary";
 
 export type PublicNewsItem = {
   id: string;
@@ -159,8 +160,31 @@ export async function getActivePopups(): Promise<PublicPopup[]> {
   }
 }
 
+/**
+ * Local dev fallback so flyers render without a reachable DB.
+ * Production keeps the "respect CMS deletions" behaviour (no static fallback).
+ */
+const staticFlyers: PublicFlyer[] = [
+  {
+    id: "static-flyer-interviews",
+    title: "2026 Intake Interviews",
+    image: cldUrl("stemhsa/flyers/2026-intake-interviews"),
+    caption: "Applications open for the 2026 academic year.",
+  },
+  {
+    id: "static-flyer-bootcamp",
+    title: "STEM Holiday Boot Camp",
+    image: cldUrl("stemhsa/flyers/stem-boot-camp"),
+    caption: "3rd – 14th August 2026. Hands-on STEM projects.",
+  },
+];
+
 export async function getPublishedFlyers(): Promise<PublicFlyer[]> {
-  if (!isDbConfigured()) return [];
+  const dev = process.env.NODE_ENV === "development";
+
+  if (!isDbConfigured()) {
+    return dev ? staticFlyers : [];
+  }
 
   try {
     const rows = await prisma.flyer.findMany({
@@ -175,6 +199,6 @@ export async function getPublishedFlyers(): Promise<PublicFlyer[]> {
       caption: row.caption,
     }));
   } catch {
-    return [];
+    return dev ? staticFlyers : [];
   }
 }

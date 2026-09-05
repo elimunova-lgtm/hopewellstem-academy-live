@@ -10,6 +10,32 @@
 const CLOUD = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ?? "";
 
 /**
+ * Local-dev asset override.
+ *
+ * During `next dev` the site renders these static files from /public instead of
+ * hitting Cloudinary, so it works with no Cloudinary account/keys. The map is
+ * keyed by Cloudinary public ID and points at the local file in /public.
+ *
+ * Production (next build / start) ignores this and serves from Cloudinary.
+ */
+const LOCAL_ASSETS: Record<string, string> = {
+  "stemhsa/heroes/lab3": "/lab3.jpeg",
+  "stemhsa/heroes/academics-primary": "/academics-primary.jpeg",
+  "stemhsa/heroes/academics-junior": "/academics-junior.jpeg",
+  "stemhsa/gallery/img_0206": "/img_0206.jpeg",
+  "stemhsa/gallery/img_0261": "/img_0261.jpeg",
+  "stemhsa/gallery/discover-clubs": "/discover-clubs.jpeg",
+  "stemhsa/gallery/IMG_0355": "/IMG_0355.jpeg",
+  "stemhsa/site/hopelogo": "/image.png",
+  "stemhsa/site/favicon": "/favicon.png",
+  "stemhsa/site/aslogo": "/image_1.png",
+  "stemhsa/site/infinititech": "/image.jpeg",
+  "stemhsa/site/emit": "/image_1.jpeg",
+};
+
+const isDev = process.env.NODE_ENV === "development";
+
+/**
  * Build a Cloudinary delivery URL for a given public_id.
  * Automatically applies q_auto + f_auto unless you override them.
  *
@@ -28,6 +54,10 @@ export function cldUrl(
     gravity?: string;
   } = {},
 ): string {
+  if (isDev && LOCAL_ASSETS[publicId]) {
+    return LOCAL_ASSETS[publicId];
+  }
+
   if (!CLOUD) {
     return `https://res.cloudinary.com/demo/image/upload/${publicId}`;
   }
