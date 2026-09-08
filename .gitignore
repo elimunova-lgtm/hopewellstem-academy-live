@@ -19,6 +19,7 @@ dev.log
 dev.err.log
 all-assets.txt
 existing-assets.txt
+.tmp
 
 # debug
 npm-debug.log*

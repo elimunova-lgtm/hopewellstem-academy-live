@@ -31,6 +31,9 @@ const LOCAL_ASSETS: Record<string, string> = {
   "stemhsa/site/aslogo": "/image_1.png",
   "stemhsa/site/infinititech": "/image.jpeg",
   "stemhsa/site/emit": "/image_1.jpeg",
+  "stemhsa/site/aslogo-white": "/aslogo-white.png",
+  "stemhsa/site/infinititech-white": "/infinititech-white.png",
+  "stemhsa/site/emit-white": "/emit-white.png",
 };
 
 const isDev = process.env.NODE_ENV === "development";

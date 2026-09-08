@@ -50,9 +50,9 @@ export const images = {
   ],
 
   partners: {
-    emit:         img("stemhsa/site/emit"),
-    infinititech: img("stemhsa/site/infinititech"),
-    as:           img("stemhsa/site/aslogo"),
+    emit:         img("stemhsa/site/emit-white"),
+    infinititech: img("stemhsa/site/infinititech-white"),
+    as:           img("stemhsa/site/aslogo-white"),
   },
 } as const;
 
