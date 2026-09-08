@@ -2,6 +2,9 @@
 // SEO blog articles into the database. Run with DATABASE_URL set.
 import pg from "pg";
 import crypto from "node:crypto";
+import { config } from "dotenv";
+
+config({ path: ".env.local" });
 
 const { Client } = pg;
 
@@ -20,7 +23,7 @@ const posts = [
     title: "Reliable Student Transport",
     slug: "reliable-student-transport",
     category: "News",
-    dateLabel: "January 5, 2025",
+    dateLabel: "January 5, 2026",
     image: img.transport,
     excerpt:
       "Reliable and efficient student transport services launched, ensuring safe and timely travel to and from school.",
@@ -31,29 +34,30 @@ const posts = [
     title: "Holiday Robotics Bootcamp",
     slug: "holiday-robotics-bootcamp",
     category: "News",
-    dateLabel: "April 7 – 17, 2025",
+    dateLabel: "November 2026",
     image: img.bootcamp,
     excerpt:
-      "Join us and ignite your child's imagination with robotics during our hands-on holiday bootcamp.",
+      "Held every school holiday — including this November — join us to ignite your child's imagination with hands-on robotics.",
     content:
-      "Learning never stops at Hopewell STEM Academy — even during the holidays.\n\nOur hands-on robotics bootcamp invites students to design, build and program their own robots, guided by expert STEM facilitators.\n\nThrough daily engineering challenges, coding sessions and friendly robot battles, children develop problem-solving skills, creativity and teamwork while having a great time.",
+      "Learning never stops at Hopewell STEM Academy — even during the holidays.\n\nThe Holiday Robotics Bootcamp runs every school holiday: April, August and November. This November, students design, build and program their own robots, guided by expert STEM facilitators.\n\nThrough daily engineering challenges, coding sessions and friendly robot battles, children develop problem-solving skills, creativity and teamwork while having a great time.",
   },
   {
-    title: "Admissions Ongoing 2025",
-    slug: "admissions-ongoing-2025",
+    title: "Admissions Ongoing 2027",
+    slug: "admissions-ongoing-2027",
+    legacySlug: "admissions-ongoing-2025",
     category: "News",
-    dateLabel: "2025",
+    dateLabel: "2026",
     image: img.admission,
     excerpt:
-      "Enrol now and let your child learn cutting-edge technology, problem solving and collaboration skills.",
+      "Enrol now for the 2027 intake and let your child learn cutting-edge technology, problem solving and collaboration skills.",
     content:
-      "New families are joining Hopewell STEM Academy every term.\n\nWe offer playgroup, primary school and junior high school programmes built around hands-on STEM learning — coding, robotics, science and engineering taught through real projects.\n\nContact our admissions team to arrange a campus visit, assessment and interview, and secure your child's place today.",
+      "Applications for the 2027 academic year are now open.\n\nWe offer playgroup, primary school and junior high school programmes built around hands-on STEM learning — coding, robotics, science and engineering taught through real projects.\n\nContact our admissions team to arrange a campus visit, assessment and interview, and secure your child's place for 2027 today.",
   },
   {
     title: "Robotics Team Victory",
     slug: "robotics-team-victory",
     category: "News",
-    dateLabel: "January 25, 2025",
+    dateLabel: "January 25, 2026",
     image: img.robotics,
     excerpt:
       "Our robotics team secured first place in the National Robotics Championship.",
@@ -99,12 +103,13 @@ const now = new Date().toISOString();
 
 for (let i = 0; i < posts.length; i++) {
   const post = posts[i];
+  const matchSlug = post.legacySlug ?? post.slug;
   const result = await client.query(
     `UPDATE "NewsPost"
        SET "title" = $1, "excerpt" = $2, "image" = $3, "dateLabel" = $4,
            "slug" = $5, "content" = $6, "category" = $7, "published" = true,
            "sortOrder" = $8, "updatedAt" = $9
-     WHERE "slug" = $5 OR ("title" = $1 AND "slug" IS NULL)`,
+     WHERE "slug" = $10 OR ("title" = $1 AND "slug" IS NULL)`,
     [
       post.title,
       post.excerpt,
@@ -115,6 +120,7 @@ for (let i = 0; i < posts.length; i++) {
       post.category,
       i,
       now,
+      matchSlug,
     ]
   );
 
@@ -146,4 +152,71 @@ for (let i = 0; i < posts.length; i++) {
 
 const count = await client.query('SELECT COUNT(*)::int AS n FROM "NewsPost"');
 console.log(`Total news posts: ${count.rows[0].n}`);
+
+const events = [
+  {
+    title: "School Fun Day",
+    dateLabel: "April 2026",
+    time: "9:00 AM",
+    description:
+      "An exciting day filled with activities including water slides, bouncy castles and a fashion show. Bring your friends and family for a day of fun.",
+    location: "School Grounds",
+    image: img.admission,
+  },
+  {
+    title: "STEM Holiday Bootcamp",
+    dateLabel: "November 2026",
+    time: "10:00 AM",
+    description:
+      "A hands-on holiday programme introducing students to robotics, coding and engineering challenges — held every school holiday.",
+    location: "Innovation Hub",
+    image: img.bootcamp,
+  },
+  {
+    title: "Annual Sports Day",
+    dateLabel: "March 2026",
+    time: "8:00 AM",
+    description:
+      "A day of athletic competition, team sports and physical activities celebrating our students' sporting achievements.",
+    location: "School Sports Ground",
+    image: img.robotics,
+  },
+  {
+    title: "STEM Career Fair",
+    dateLabel: "April 2026",
+    time: "11:00 AM",
+    description:
+      "Meet industry professionals and explore STEM career opportunities with over 20 companies and universities present.",
+    location: "School Hall",
+    image: img.transport,
+  },
+];
+
+for (let i = 0; i < events.length; i++) {
+  const ev = events[i];
+  const result = await client.query(
+    `UPDATE "EventPost"
+       SET "description" = $1, "dateLabel" = $2, "time" = $3, "location" = $4,
+           "image" = $5, "published" = true, "sortOrder" = $6, "updatedAt" = $7
+     WHERE "title" = $8`,
+    [ev.description, ev.dateLabel, ev.time, ev.location, ev.image, i, now, ev.title]
+  );
+
+  if (result.rowCount === 0) {
+    await client.query(
+      `INSERT INTO "EventPost"
+        ("id", "title", "description", "dateLabel", "time", "location", "image",
+         "published", "sortOrder", "createdAt", "updatedAt")
+       VALUES ($1, $2, $3, $4, $5, $6, $7, true, $8, $9, $9)
+       ON CONFLICT DO NOTHING`,
+      [crypto.randomUUID(), ev.title, ev.description, ev.dateLabel, ev.time, ev.location, ev.image, i, now]
+    );
+    console.log(`[created event] ${ev.title}`);
+  } else {
+    console.log(`[sync'd event] ${ev.title}`);
+  }
+}
+
+const eventCount = await client.query('SELECT COUNT(*)::int AS n FROM "EventPost"');
+console.log(`Total events: ${eventCount.rows[0].n}`);
 await client.end();

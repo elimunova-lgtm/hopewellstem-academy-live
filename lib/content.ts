@@ -122,7 +122,7 @@ export type NewsItem = {
 export const news: NewsItem[] = [
   {
     title: "Reliable Student Transport",
-    date: "January 5, 2025",
+    date: "January 5, 2026",
     excerpt:
       "Reliable and efficient student transport services launched, ensuring safe and timely travel to and from school.",
     image: images.news.transport,
@@ -133,29 +133,29 @@ export const news: NewsItem[] = [
   },
   {
     title: "Holiday Robotics Bootcamp",
-    date: "April 7 – 17, 2025",
+    date: "November 2026",
     excerpt:
-      "Join us and ignite your child's imagination with robotics during our hands-on holiday bootcamp.",
+      "Held every school holiday — including this November — join us to ignite your child's imagination with hands-on robotics.",
     image: images.news.bootcamp,
     slug: "holiday-robotics-bootcamp",
     category: "News",
     content:
-      "Learning never stops at Hopewell STEM Academy — even during the holidays.\n\nOur hands-on robotics bootcamp invites students to design, build and program their own robots, guided by expert STEM facilitators.\n\nThrough daily engineering challenges, coding sessions and friendly robot battles, children develop problem-solving skills, creativity and teamwork while having a great time.",
+      "Learning never stops at Hopewell STEM Academy — even during the holidays.\n\nThe Holiday Robotics Bootcamp runs every school holiday: April, August and November. This November, students design, build and program their own robots, guided by expert STEM facilitators.\n\nThrough daily engineering challenges, coding sessions and friendly robot battles, children develop problem-solving skills, creativity and teamwork while having a great time.",
   },
   {
-    title: "Admissions Ongoing 2025",
-    date: "2025",
+    title: "Admissions Ongoing 2027",
+    date: "2026",
     excerpt:
-      "Enrol now and let your child learn cutting-edge technology, problem solving and collaboration skills.",
+      "Enrol now for the 2027 intake and let your child learn cutting-edge technology, problem solving and collaboration skills.",
     image: images.news.admission,
-    slug: "admissions-ongoing-2025",
+    slug: "admissions-ongoing-2027",
     category: "News",
     content:
-      "New families are joining Hopewell STEM Academy every term.\n\nWe offer playgroup, primary school and junior high school programmes built around hands-on STEM learning — coding, robotics, science and engineering taught through real projects.\n\nContact our admissions team to arrange a campus visit, assessment and interview, and secure your child's place today.",
+      "Applications for the 2027 academic year are now open.\n\nWe offer playgroup, primary school and junior high school programmes built around hands-on STEM learning — coding, robotics, science and engineering taught through real projects.\n\nContact our admissions team to arrange a campus visit, assessment and interview, and secure your child's place for 2027 today.",
   },
   {
     title: "Robotics Team Victory",
-    date: "January 25, 2025",
+    date: "January 25, 2026",
     excerpt:
       "Our robotics team secured first place in the National Robotics Championship.",
     image: images.news.robotics,
@@ -211,7 +211,7 @@ export type EventItem = {
 export const events: EventItem[] = [
   {
     title: "School Fun Day",
-    date: "April 4, 2025",
+    date: "April 2026",
     time: "9:00 AM",
     description:
       "An exciting day filled with activities including water slides, bouncy castles and a fashion show. Bring your friends and family for a day of fun.",
@@ -220,16 +220,16 @@ export const events: EventItem[] = [
   },
   {
     title: "STEM Holiday Bootcamp",
-    date: "April 7, 2025",
+    date: "November 2026",
     time: "10:00 AM",
     description:
-      "A hands-on holiday programme introducing students to robotics, coding and engineering challenges.",
+      "A hands-on holiday programme introducing students to robotics, coding and engineering challenges — held every school holiday.",
     location: "Innovation Hub",
     image: images.events.bootcamp,
   },
   {
     title: "Annual Sports Day",
-    date: "March 22, 2025",
+    date: "March 2026",
     time: "8:00 AM",
     description:
       "A day of athletic competition, team sports and physical activities celebrating our students' sporting achievements.",
@@ -238,7 +238,7 @@ export const events: EventItem[] = [
   },
   {
     title: "STEM Career Fair",
-    date: "April 15, 2025",
+    date: "April 2026",
     time: "11:00 AM",
     description:
       "Meet industry professionals and explore STEM career opportunities with over 20 companies and universities present.",

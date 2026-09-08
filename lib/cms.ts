@@ -195,15 +195,15 @@ export async function getActivePopups(): Promise<PublicPopup[]> {
 const staticFlyers: PublicFlyer[] = [
   {
     id: "static-flyer-interviews",
-    title: "2026 Intake Interviews",
+    title: "2027 Intake Interviews",
     image: cldUrl("stemhsa/flyers/2026-intake-interviews"),
-    caption: "Applications open for the 2026 academic year.",
+    caption: "Applications open for the 2027 academic year.",
   },
   {
     id: "static-flyer-bootcamp",
-    title: "STEM Holiday Boot Camp",
+    title: "Holiday Robotics Bootcamp",
     image: cldUrl("stemhsa/flyers/stem-boot-camp"),
-    caption: "3rd – 14th August 2026. Hands-on STEM projects.",
+    caption: "Every school holiday — November 2026 next. Hands-on robotics.",
   },
 ];
 
