@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaWhatsapp } from "react-icons/fa";
 import PageHero from "@/components/PageHero";
 import { SectionHeading } from "@/components/ui";
@@ -10,14 +10,14 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Hopewell STEM Academy, Nakuru. Call, email, visit or apply online — we'd love to hear from you.",
+    "Get in touch with Hopewell STEM Academy, Nakuru. Call, email, visit or apply online â€” we'd love to hear from you.",  alternates: { canonical: "/contact" },
 };
 
 const info = [
   { icon: FaMapMarkerAlt, title: "Location", lines: ["Hopewell STEM Academy", "Pipeline, Nakuru, Kenya"] },
   { icon: FaPhone, title: "Phone", lines: [site.phone] },
   { icon: FaEnvelope, title: "Email", lines: [site.email] },
-  { icon: FaClock, title: "Office Hours", lines: ["Mon – Fri: 8:00 AM – 5:00 PM", "Sat: 8:00 AM – 12:00 PM"] },
+  { icon: FaClock, title: "Office Hours", lines: ["Mon â€“ Fri: 8:00 AM â€“ 5:00 PM", "Sat: 8:00 AM â€“ 12:00 PM"] },
 ];
 
 const faqs: FaqItem[] = [
@@ -49,7 +49,7 @@ const faqs: FaqItem[] = [
   {
     question: "Are there transportation services available?",
     answer:
-      "Yes. We provide safe and reliable transport for students within Nakuru and its environs. Our buses are well maintained and supervised. Transport fees vary by distance — please contact our office for route information and rates.",
+      "Yes. We provide safe and reliable transport for students within Nakuru and its environs. Our buses are well maintained and supervised. Transport fees vary by distance â€” please contact our office for route information and rates.",
   },
 ];
 
@@ -66,7 +66,7 @@ export default function ContactPage() {
       <section className="section">
         <div className="container-page">
           <div className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 to-white p-8">
+            <div className="rounded-3xl border border-brand-100 bg-cream p-8">
               <h2 className="font-display text-2xl font-bold text-brand-700">Get in Touch</h2>
               <div className="mt-6 space-y-6">
                 {info.map(({ icon: Icon, title, lines }) => (
@@ -117,7 +117,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading
             eyebrow="Admissions"

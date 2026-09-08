@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, IntroSplit, CTASection } from "@/components/ui";
 import { site } from "@/lib/site";
@@ -7,7 +7,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Fees & Transport",
   description:
-    "Information on fees and safe, reliable school transport at Hopewell STEM Academy, Nakuru.",
+    "Information on fees and safe, reliable school transport at Hopewell STEM Academy, Nakuru.",  alternates: { canonical: "/discover/fees-transport" },
 };
 
 const transport = [
@@ -33,7 +33,7 @@ export default function FeesTransportPage() {
             title="Transparent & Flexible"
             intro="Our fee structure varies by grade level and includes tuition, learning materials and standard activities. We offer flexible payment plans to suit different families."
           />
-          <div className="mx-auto mt-10 max-w-2xl rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 to-white p-8 text-center shadow-card">
+          <div className="mx-auto mt-10 max-w-2xl rounded-3xl border border-brand-100 bg-cream p-8 text-center shadow-card">
             <p className="text-lg text-slate-600">
               For the current fee structure and payment options, please contact our office.
             </p>
@@ -60,7 +60,7 @@ export default function FeesTransportPage() {
         ]}
       />
 
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="Our Promise" title="Transport You Can Trust" />
           <IconCardGrid items={transport} />

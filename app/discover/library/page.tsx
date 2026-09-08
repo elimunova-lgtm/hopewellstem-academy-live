@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, IntroSplit, CTASection } from "@/components/ui";
 import { heroes } from "@/lib/heroes";
@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Library",
   description:
-    "Our library and resource centre nurtures a love of reading, research and lifelong learning.",
+    "Our library and resource centre nurtures a love of reading, research and lifelong learning.",  alternates: { canonical: "/discover/library" },
 };
 
 const features = [
@@ -33,11 +33,11 @@ export default function LibraryPage() {
         image="/images/IMG_1116.jpg"
         paragraphs={[
           "Our library is a welcoming space that nurtures a lifelong love of reading and learning. With a rich and growing collection, students explore stories, build knowledge and develop strong research skills.",
-          "Combining print and digital resources, the library supports every learner — from early readers to budding scientists and researchers.",
+          "Combining print and digital resources, the library supports every learner â€” from early readers to budding scientists and researchers.",
         ]}
         features={["Diverse book collection", "Digital resources", "Quiet study areas", "Reading programs"]}
       />
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="What We Offer" title="Inside Our Library" />
           <IconCardGrid items={features} />

@@ -7,7 +7,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Our Policies",
   description:
-    "Review the policies that guide conduct, safety and communication at Hopewell STEM Academy.",
+    "Review the policies that guide conduct, safety and communication at Hopewell STEM Academy.",  alternates: { canonical: "/about/policies" },
 };
 
 export default function PoliciesPage() {

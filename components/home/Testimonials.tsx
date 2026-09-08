@@ -1,6 +1,7 @@
-import { FaFacebookF, FaThumbsUp } from "react-icons/fa";
+﻿import { FaThumbsUp } from "react-icons/fa";
 import { testimonials } from "@/lib/content";
 import { SectionHeading } from "@/components/ui";
+import Reveal from "@/components/Reveal";
 
 function Card({
   name,
@@ -9,10 +10,16 @@ function Card({
   text,
 }: (typeof testimonials)[number]) {
   return (
-    <figure className="relative flex w-80 shrink-0 flex-col rounded-2xl border border-brand-100 bg-white p-6 shadow-card">
-      <FaFacebookF className="absolute right-5 top-5 h-4 w-4 text-[#4267B2]/70" />
+    <figure className="relative flex w-80 shrink-0 flex-col rounded-2xl border border-brand-100/80 bg-white p-6 shadow-card">
+      <span
+        className="absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-gradient-to-r from-gold-300 via-gold to-gold-500"
+        aria-hidden="true"
+      />
+      <span className="absolute right-5 top-4 font-display text-6xl font-extrabold leading-none text-gold/25">
+        &ldquo;
+      </span>
       <figcaption className="flex items-center gap-3">
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand font-semibold text-white">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand font-semibold text-gold-300 ring-2 ring-gold/40">
           {initials}
         </span>
         <div>
@@ -33,13 +40,15 @@ function Card({
 export default function Testimonials() {
   const loop = [...testimonials, ...testimonials];
   return (
-    <section className="section overflow-hidden bg-gradient-to-br from-brand-50 to-white">
+    <section className="section overflow-hidden bg-cream">
       <div className="container-page">
-        <SectionHeading
-          eyebrow="Testimonials"
-          title="What Our Community Says"
-          intro="Hear from the parents and families who trust Hopewell STEM Academy with their children's future."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Testimonials"
+            title="What Our Community Says"
+            intro="Hear from the parents and families who trust Hopewell STEM Academy with their children's future."
+          />
+        </Reveal>
       </div>
       <div className="group relative mt-12">
         <div className="flex w-max animate-marquee gap-6 px-4 group-hover:[animation-play-state:paused]">

@@ -27,7 +27,17 @@ const config: Config = {
           DEFAULT: "#DC143C",
           light: "#FF6347",
         },
-        gold: "#D4AF37",
+        gold: {
+          DEFAULT: "#D4AF37",
+          50: "#fbf8ec",
+          100: "#f6efd1",
+          300: "#e6cd6c",
+          400: "#ddbe4e",
+          500: "#D4AF37",
+          600: "#b8922a",
+          700: "#93741f",
+        },
+        cream: "#FBF8F3",
         ink: "#1f2426",
       },
       fontFamily: {
@@ -37,6 +47,8 @@ const config: Config = {
       boxShadow: {
         card: "0 10px 30px rgba(139, 0, 0, 0.08)",
         "card-hover": "0 20px 45px rgba(139, 0, 0, 0.16)",
+        "card-soft": "0 6px 24px rgba(139, 0, 0, 0.05)",
+        glow: "0 0 40px rgba(212, 175, 55, 0.25)",
       },
       keyframes: {
         "fade-in-up": {

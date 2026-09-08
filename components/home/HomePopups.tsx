@@ -40,6 +40,7 @@ export default function HomePopups({
   const [index, setIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const [imageOpen, setImageOpen] = useState(false);
+  const [imageFailed, setImageFailed] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -67,6 +68,7 @@ export default function HomePopups({
     setVisiblePopups(active);
     setIndex(0);
     setOpen(active.length > 0);
+    setImageFailed(false);
   }, [popups]);
 
   const current = useMemo(
@@ -116,7 +118,7 @@ export default function HomePopups({
           <FaTimes />
         </button>
 
-        {current.image ? (
+        {current.image && !imageFailed ? (
           <button
             type="button"
             onClick={() => setImageOpen(true)}
@@ -128,6 +130,7 @@ export default function HomePopups({
               alt=""
               fill
               unoptimized
+              onError={() => setImageFailed(true)}
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 512px"
             />

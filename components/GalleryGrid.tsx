@@ -2,17 +2,18 @@
 
 import { useMemo, useState } from "react";
 import ClickableImage from "@/components/ClickableImage";
-import { galleryCategories, galleryItems } from "@/lib/gallery";
+import { galleryCategories } from "@/lib/gallery";
+import type { GalleryItem } from "@/lib/gallery";
 
-export default function GalleryGrid() {
+export default function GalleryGrid({ items }: { items: GalleryItem[] }) {
   const [active, setActive] = useState("all");
 
   const filtered = useMemo(
     () =>
       active === "all"
-        ? galleryItems
-        : galleryItems.filter((item) => item.category === active),
-    [active]
+        ? items
+        : items.filter((item) => item.category === active),
+    [active, items]
   );
 
   return (
@@ -24,9 +25,9 @@ export default function GalleryGrid() {
             <button
               key={cat.id}
               onClick={() => setActive(cat.id)}
-              className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+              className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
                 isActive
-                  ? "bg-brand-600 text-white shadow-sm"
+                  ? "bg-gold text-brand-950 shadow-card"
                   : "border border-brand-100 bg-white text-slate-600 hover:bg-brand-50 hover:text-brand-700"
               }`}
             >
@@ -45,7 +46,7 @@ export default function GalleryGrid() {
         {filtered.map((item) => (
           <figure
             key={item.src}
-            className="group relative aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-brand-100 to-brand-50 shadow-card"
+            className="group relative aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-brand-100 to-brand-50 shadow-card ring-1 ring-transparent transition hover:ring-gold/60"
           >
             <ClickableImage
               src={item.src}

@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, IntroSplit, CTASection } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Computer Lab",
   description:
-    "Our modern computer lab powers coding, research and digital literacy at Hopewell STEM Academy.",
+    "Our modern computer lab powers coding, research and digital literacy at Hopewell STEM Academy.",  alternates: { canonical: "/discover/computer-lab" },
 };
 
 const features = [
@@ -36,7 +36,7 @@ export default function ComputerLabPage() {
         ]}
         features={["Modern computers", "Coding curriculum", "Supervised access", "Robotics-ready"]}
       />
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="Inside the Lab" title="What Students Experience" />
           <IconCardGrid items={features} />

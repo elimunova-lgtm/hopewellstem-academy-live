@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, IntroSplit, CTASection } from "@/components/ui";
 import { heroes } from "@/lib/heroes";
@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Guidance & Counselling",
   description:
-    "Hopewell STEM Academy's guidance and counselling program supports every student's wellbeing, character and growth.",
+    "Hopewell STEM Academy's guidance and counselling program supports every student's wellbeing, character and growth.",  alternates: { canonical: "/discover/guidance-counselling" },
 };
 
 const services = [
@@ -23,7 +23,7 @@ export default function GuidancePage() {
     <>
       <PageHero
         title="Guidance & Counselling"
-        subtitle="Nurturing the whole child — mind, character and heart."
+        subtitle="Nurturing the whole child â€” mind, character and heart."
         image={heroes.discoverGuidance}
         crumbs={[{ label: "Home", href: "/" }, { label: "Discover", href: "/discover" }, { label: "Guidance & Counselling" }]}
       />
@@ -37,7 +37,7 @@ export default function GuidancePage() {
         ]}
         features={["Confidential support", "Trained counsellors", "Life-skills programs", "Parent partnership"]}
       />
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="How We Help" title="Our Support Services" />
           <IconCardGrid items={services} />

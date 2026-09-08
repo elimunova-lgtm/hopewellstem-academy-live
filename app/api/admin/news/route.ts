@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { ensureAdminApi } from "@/lib/admin-api";
 import { prisma } from "@/lib/prisma";
+import { slugify } from "@/lib/cms";
 
 export async function GET() {
   const unauthorized = await ensureAdminApi();
@@ -24,6 +25,9 @@ export async function POST(request: Request) {
       excerpt: String(body.excerpt ?? ""),
       image: String(body.image ?? ""),
       dateLabel: String(body.dateLabel ?? ""),
+      slug: body.slug ? String(body.slug).trim() : slugify(String(body.title ?? "")),
+      content: String(body.content ?? ""),
+      category: String(body.category ?? "News"),
       published: Boolean(body.published ?? true),
       sortOrder: Number(body.sortOrder ?? 0),
     },

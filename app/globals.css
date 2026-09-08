@@ -43,6 +43,10 @@
     @apply btn bg-brand text-white shadow-card hover:-translate-y-0.5 hover:bg-brand-900 hover:shadow-card-hover;
   }
 
+  .btn-gold {
+    @apply btn bg-gold text-brand-950 shadow-card hover:-translate-y-0.5 hover:bg-gold-300 hover:shadow-card-hover;
+  }
+
   .btn-outline {
     @apply btn border-2 border-brand text-brand hover:bg-brand hover:text-white;
   }
@@ -55,12 +59,54 @@
     @apply py-16 sm:py-20 lg:py-24;
   }
 
+  .section-tint {
+    @apply relative bg-cream;
+  }
+
   .section-eyebrow {
-    @apply mb-3 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-accent;
+    @apply mb-3 inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.25em] text-brand;
+  }
+
+  .section-eyebrow::before {
+    content: "";
+    @apply h-px w-9 bg-gold;
+  }
+
+  .section-eyebrow.is-centered::before,
+  .section-eyebrow.text-center::before {
+    display: none;
   }
 
   .section-title {
     @apply font-display text-3xl font-bold text-brand sm:text-4xl lg:text-[2.75rem] lg:leading-tight;
+  }
+
+  .section-intro {
+    @apply mt-5 text-lg leading-relaxed text-slate-600;
+  }
+
+  .gold-rule {
+    @apply mx-auto mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-gold-300 via-gold to-gold-500;
+  }
+
+  .card {
+    @apply rounded-2xl border border-brand-100/80 bg-white shadow-card transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-card-hover;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-2 font-semibold text-brand transition-all hover:gap-3;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-4 py-2 text-sm text-slate-600;
+  }
+
+  .input-field {
+    @apply mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-800 outline-none ring-brand placeholder:text-slate-400 focus:ring-2;
   }
 
   .prose-page {
@@ -73,8 +119,25 @@
 
   .footer-heading::after {
     content: "";
-    @apply absolute bottom-0 left-0 h-0.5 w-10 bg-accent;
+    @apply absolute bottom-0 left-0 h-0.5 w-10 bg-gold;
   }
+}
+
+/* Decorative patterns */
+.bg-dots {
+  background-image: radial-gradient(rgba(139, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.bg-dots-light {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.bg-gold-glow {
+  background:
+    radial-gradient(60rem 30rem at 50% 0%, rgba(212, 175, 55, 0.09), transparent 60%),
+    radial-gradient(40rem 24rem at 50% 110%, rgba(139, 0, 0, 0.05), transparent 60%);
 }
 
 /* Hide scrollbar utility used by ticker columns */
@@ -84,4 +147,27 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Scroll-reveal animation (see components/Reveal.tsx).
+   Hidden only when JS is active — without JS everything stays visible. */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

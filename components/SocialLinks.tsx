@@ -7,11 +7,11 @@ type Props = {
 
 export default function SocialLinks({ variant = "bar", className = "" }: Props) {
   const base =
-    "flex h-9 w-9 items-center justify-center rounded-full text-white transition-all duration-300 hover:-translate-y-0.5";
+    "flex h-9 w-9 items-center justify-center rounded-full transition-all duration-300 hover:-translate-y-0.5";
   const tone =
     variant === "bar"
-      ? "bg-white/15"
-      : "bg-white/10";
+      ? "bg-white/15 text-white ring-1 ring-white/30 shadow-card-soft hover:bg-gold-400 hover:text-brand-950 hover:ring-gold-400"
+      : "bg-white/10 text-white hover:text-white";
 
   return (
     <div className={`flex flex-wrap items-center gap-2 ${className}`}>

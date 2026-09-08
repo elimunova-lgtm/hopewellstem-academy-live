@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, IntroSplit, CTASection } from "@/components/ui";
 import { heroes } from "@/lib/heroes";
@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "School Uniform",
   description:
-    "Our school uniform guidelines promote pride, identity and a sense of belonging at Hopewell STEM Academy.",
+    "Our school uniform guidelines promote pride, identity and a sense of belonging at Hopewell STEM Academy.",  alternates: { canonical: "/discover/uniform" },
 };
 
 const guidelines = [
@@ -23,7 +23,7 @@ export default function UniformPage() {
     <>
       <PageHero
         title="School Uniform"
-        subtitle="Pride, identity and belonging — woven into what we wear."
+        subtitle="Pride, identity and belonging â€” woven into what we wear."
         image={heroes.discoverUniform}
         crumbs={[{ label: "Home", href: "/" }, { label: "Discover", href: "/discover" }, { label: "Uniform" }]}
       />
@@ -32,12 +32,12 @@ export default function UniformPage() {
         title="Dressed for Success"
         image={heroes.discoverUniform}
         paragraphs={[
-          "Our school uniform reflects the values of Hopewell STEM Academy — discipline, pride and a strong sense of community. Wearing the uniform smartly helps students feel they belong and are ready to learn.",
+          "Our school uniform reflects the values of Hopewell STEM Academy â€” discipline, pride and a strong sense of community. Wearing the uniform smartly helps students feel they belong and are ready to learn.",
           "The official uniform is worn every day, including after-school programs, while games kit is reserved for sports and PE days.",
         ]}
         features={["Official daily uniform", "Dedicated games kit", "Smart presentation", "Sense of belonging"]}
       />
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="Guidelines" title="Uniform Essentials" />
           <IconCardGrid items={guidelines} />

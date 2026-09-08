@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
+import { IMAGE_FALLBACK } from "@/lib/placeholder-image";
 
 type ImageLightboxProps = {
   src: string;

@@ -8,7 +8,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Meet the Staff",
   description:
-    "Meet the dedicated teaching and non-teaching staff who drive excellence at Hopewell STEM Academy.",
+    "Meet the dedicated teaching and non-teaching staff who drive excellence at Hopewell STEM Academy.",  alternates: { canonical: "/about/staff" },
 };
 
 export default function StaffPage() {
@@ -30,7 +30,7 @@ export default function StaffPage() {
           <PersonGrid people={teachingStaff} variant="staff" />
         </div>
       </section>
-      <section className="section bg-slate-50">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading
             eyebrow="Behind the Scenes"

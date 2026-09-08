@@ -4,18 +4,23 @@ import FlyerGallery from "@/components/FlyerGallery";
 import GalleryGrid from "@/components/GalleryGrid";
 import { SectionHeading, CTASection } from "@/components/ui";
 import { getPublishedFlyers } from "@/lib/cms";
+import { galleryItems } from "@/lib/gallery";
+import { listCloudinaryPhotos } from "@/lib/gallery-live";
 import { heroes } from "@/lib/heroes";
 
 export const metadata: Metadata = {
   title: "Gallery",
   description:
     "Explore life at Hopewell STEM Academy — STEM projects, sports, robotics, learning and community moments.",
+  alternates: { canonical: "/get-involved/gallery" },
 };
 
 export const dynamic = "force-dynamic";
 
 export default async function GalleryPage() {
   const flyers = await getPublishedFlyers();
+  const livePhotos = await listCloudinaryPhotos();
+  const photos = livePhotos.length > 0 ? livePhotos : galleryItems;
 
   return (
     <>
@@ -37,7 +42,7 @@ export default async function GalleryPage() {
               intro="Browse photos from our classrooms, labs, fields and events. Click any image for full view."
             />
             <div className="mt-10">
-              <GalleryGrid />
+              <GalleryGrid items={photos} />
             </div>
           </div>
         </div>

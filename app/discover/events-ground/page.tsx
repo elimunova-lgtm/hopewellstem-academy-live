@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, IntroSplit, CTASection } from "@/components/ui";
 import { heroes } from "@/lib/heroes";
@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Events Ground",
   description:
-    "Our spacious events ground hosts assemblies, sports days, science fairs and community celebrations.",
+    "Our spacious events ground hosts assemblies, sports days, science fairs and community celebrations.",  alternates: { canonical: "/discover/events-ground" },
 };
 
 const uses = [
@@ -37,7 +37,7 @@ export default function EventsGroundPage() {
         ]}
         features={["Open, spacious grounds", "Hosts major events", "Safe & well-kept", "Community gatherings"]}
       />
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="How We Use It" title="Bringing Our Community Together" />
           <IconCardGrid items={uses} />

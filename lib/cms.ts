@@ -8,6 +8,9 @@ export type PublicNewsItem = {
   date: string;
   excerpt: string;
   image: string;
+  slug?: string;
+  category?: string;
+  content?: string;
 };
 
 export type PublicEventItem = {
@@ -41,6 +44,15 @@ function isDbConfigured() {
   return Boolean(process.env.DATABASE_URL);
 }
 
+export function slugify(input: string): string {
+  return input
+    .toLowerCase()
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80);
+}
+
 export async function getPublishedNews(): Promise<PublicNewsItem[]> {
   if (!isDbConfigured()) {
     return staticNews.map((item, index) => ({
@@ -49,6 +61,9 @@ export async function getPublishedNews(): Promise<PublicNewsItem[]> {
       date: item.date,
       excerpt: item.excerpt,
       image: item.image,
+      slug: item.slug ?? slugify(item.title),
+      category: item.category ?? "News",
+      content: item.content ?? "",
     }));
   }
 
@@ -69,6 +84,9 @@ export async function getPublishedNews(): Promise<PublicNewsItem[]> {
       date: row.dateLabel,
       excerpt: row.excerpt,
       image: row.image,
+      slug: row.slug ?? slugify(row.title),
+      category: row.category ?? "News",
+      content: row.content ?? "",
     }));
   } catch {
     return staticNews.map((item, index) => ({
@@ -77,8 +95,18 @@ export async function getPublishedNews(): Promise<PublicNewsItem[]> {
       date: item.date,
       excerpt: item.excerpt,
       image: item.image,
+      slug: item.slug ?? slugify(item.title),
+      category: item.category ?? "News",
+      content: item.content ?? "",
     }));
   }
+}
+
+export async function getPublishedNewsBySlug(
+  slug: string
+): Promise<PublicNewsItem | null> {
+  const all = await getPublishedNews();
+  return all.find((item) => (item.slug ?? "") === slug) ?? null;
 }
 
 export async function getPublishedEvents(): Promise<PublicEventItem[]> {

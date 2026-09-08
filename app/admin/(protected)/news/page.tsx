@@ -9,6 +9,9 @@ type NewsItem = {
   excerpt: string;
   image: string;
   dateLabel: string;
+  slug: string | null;
+  content: string;
+  category: string;
   published: boolean;
   sortOrder: number;
 };
@@ -18,6 +21,9 @@ const emptyForm = {
   excerpt: "",
   image: "/images/discover-transport.jpg",
   dateLabel: "",
+  slug: "",
+  content: "",
+  category: "Blog",
   published: true,
   sortOrder: 0,
 };
@@ -78,6 +84,9 @@ export default function AdminNewsPage() {
       excerpt: item.excerpt,
       image: item.image,
       dateLabel: item.dateLabel,
+      slug: item.slug ?? "",
+      content: item.content ?? "",
+      category: item.category ?? "News",
       published: item.published,
       sortOrder: item.sortOrder,
     });
@@ -94,8 +103,31 @@ export default function AdminNewsPage() {
         </h2>
         <div className="mt-4 space-y-4">
           <Field label="Title" value={form.title} onChange={(value) => setForm({ ...form, title: value })} />
-          <Field label="Date label" value={form.dateLabel} onChange={(value) => setForm({ ...form, dateLabel: value })} placeholder="January 5, 2025" />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Field label="Date label" value={form.dateLabel} onChange={(value) => setForm({ ...form, dateLabel: value })} placeholder="January 5, 2025" />
+            <Field label="Category" value={form.category} onChange={(value) => setForm({ ...form, category: value })} placeholder="Blog / News" />
+          </div>
+          <Field
+            label="URL slug (blank = auto from title)"
+            value={form.slug}
+            onChange={(value) => setForm({ ...form, slug: value })}
+            placeholder="e.g. why-hopewell-is-the-best-school-in-nakuru"
+          />
           <TextArea label="Excerpt" value={form.excerpt} onChange={(value) => setForm({ ...form, excerpt: value })} />
+          <div>
+            <label className="block text-sm font-medium text-slate-700">
+              Article content (blog post body — use blank lines between paragraphs)
+            </label>
+            <textarea
+              value={form.content}
+              onChange={(event) => setForm({ ...form, content: event.target.value })}
+              rows={10}
+              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none ring-brand focus:ring-2"
+            />
+            <p className="mt-1 text-xs text-slate-500">
+              Items with article content appear on the website&#39;s News &amp; Blog pages. News without content stays on the homepage only.
+            </p>
+          </div>
           <ImageUpload
             label="News image"
             value={form.image}

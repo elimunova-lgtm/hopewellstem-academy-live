@@ -59,3 +59,27 @@ export async function requireSession() {
   }
   return session;
 }
+
+export async function changeAdminPassword(
+  adminId: string,
+  currentPassword: string,
+  newPassword: string
+): Promise<{ ok: boolean; error?: string }> {
+  const admin = await prisma.admin.findUnique({ where: { id: adminId } });
+  if (!admin) {
+    return { ok: false, error: "Admin account not found." };
+  }
+
+  const valid = await verifyPassword(currentPassword, admin.passwordHash);
+  if (!valid) {
+    return { ok: false, error: "Current password is incorrect." };
+  }
+
+  const passwordHash = await hashPassword(newPassword);
+  await prisma.admin.update({
+    where: { id: adminId },
+    data: { passwordHash },
+  });
+
+  return { ok: true };
+}

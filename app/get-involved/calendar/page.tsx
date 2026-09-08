@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "School Calendar",
   description:
-    "Stay up to date with term dates, events and activities at Hopewell STEM Academy, Nakuru.",
+    "Stay up to date with term dates, events and activities at Hopewell STEM Academy, Nakuru.",  alternates: { canonical: "/get-involved/calendar" },
 };
 
 export default function CalendarPage() {

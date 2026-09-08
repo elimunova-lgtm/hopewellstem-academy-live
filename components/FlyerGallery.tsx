@@ -8,21 +8,24 @@ export default function FlyerGallery({ flyers }: { flyers: PublicFlyer[] }) {
 
   return (
     <section className="mt-16">
-      <div className="mb-8 border-l-4 border-accent pl-4">
-        <span className="section-eyebrow !mb-1">Announcements</span>
-        <h2 className="font-display text-3xl font-bold text-brand">
-          Flyers & Posters
-        </h2>
-        <p className="mt-2 max-w-2xl text-slate-600">
-          Click any flyer to view it full size.
-        </p>
+      <div className="mb-8 flex items-start gap-4">
+        <span className="mt-1.5 h-10 w-1.5 shrink-0 rounded-full bg-gradient-to-b from-gold-300 via-gold to-gold-500" aria-hidden="true" />
+        <div>
+          <span className="section-eyebrow !mb-1">Announcements</span>
+          <h2 className="font-display text-3xl font-bold text-brand">
+            Flyers & Posters
+          </h2>
+          <p className="mt-2 max-w-2xl text-slate-600">
+            Click any flyer to view it full size.
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {flyers.map((flyer) => (
           <article
             key={flyer.id}
-            className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition hover:-translate-y-1 hover:shadow-card-hover"
+            className="overflow-hidden rounded-2xl border border-brand-100/80 bg-white shadow-card transition hover:-translate-y-1 hover:border-gold/40 hover:shadow-card-hover"
           >
             <div className="aspect-[3/4] bg-slate-100">
               <ClickableImage

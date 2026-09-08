@@ -18,17 +18,29 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
         return (
           <div
             key={item.question}
-            className="overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-card"
+            className={`overflow-hidden rounded-2xl border bg-white shadow-card transition ${
+              isOpen ? "border-gold/50" : "border-brand-100"
+            }`}
           >
             <button
               onClick={() => setOpen(isOpen ? null : i)}
-              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold text-brand-700 transition hover:bg-brand-50"
+              className={`flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold transition ${
+                isOpen ? "bg-cream text-brand" : "text-brand-700 hover:bg-brand-50"
+              }`}
               aria-expanded={isOpen}
             >
               <span>{item.question}</span>
-              <FaChevronDown
-                className={`shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-              />
+              <span
+                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition ${
+                  isOpen ? "bg-gold text-brand-950" : "bg-brand-50 text-brand"
+                }`}
+              >
+                <FaChevronDown
+                  className={`h-3 w-3 transition-transform duration-300 ${
+                    isOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </span>
             </button>
             <div
               className={`grid transition-all duration-300 ${

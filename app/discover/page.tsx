@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Discover HSA",
   description:
-    "Explore life at Hopewell STEM Academy — our STEM initiative, sports, clubs, guidance, facilities and more.",
+    "Explore life at Hopewell STEM Academy — our STEM initiative, sports, clubs, guidance, facilities and more.",  alternates: { canonical: "/discover" },
 };
 
 const areas = [

@@ -16,6 +16,9 @@
 
 # local dev artifacts
 dev.log
+dev.err.log
+all-assets.txt
+existing-assets.txt
 
 # debug
 npm-debug.log*

@@ -8,7 +8,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Meet the Directors",
   description:
-    "Meet the visionary directors guiding Hopewell STEM Academy's mission of excellence in STEM education.",
+    "Meet the visionary directors guiding Hopewell STEM Academy's mission of excellence in STEM education.",  alternates: { canonical: "/about/directors" },
 };
 
 export default function DirectorsPage() {

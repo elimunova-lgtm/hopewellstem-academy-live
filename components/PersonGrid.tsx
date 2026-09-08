@@ -52,7 +52,7 @@ export default function PersonGrid({ people, variant = "director" }: Props) {
               className={`group transition hover:-translate-y-1.5 ${
                 isStaff
                   ? "flex flex-col items-center rounded-2xl border border-brand-100 bg-white p-6 shadow-card hover:shadow-card-hover"
-                  : `overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-card hover:shadow-card-hover ${
+                  : `overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-card ring-1 ring-transparent hover:ring-gold/60 hover:shadow-card-hover ${
                       clickable ? "cursor-pointer" : ""
                     }`
               }`}
@@ -72,7 +72,7 @@ export default function PersonGrid({ people, variant = "director" }: Props) {
               aria-label={clickable ? `View bio for ${p.name}` : undefined}
             >
               {isStaff ? (
-                <div className="relative mb-4 h-36 w-36 overflow-hidden rounded-full border-4 border-brand-100 bg-brand-50 shadow-card">
+                <div className="relative mb-4 h-36 w-36 overflow-hidden rounded-full border-4 border-brand-100 bg-brand-50 shadow-card ring-2 ring-gold/30">
                   {p.image ? (
                     <Image
                       src={p.image}
@@ -89,7 +89,7 @@ export default function PersonGrid({ people, variant = "director" }: Props) {
                   )}
                 </div>
               ) : (
-                <div className="relative aspect-square w-full overflow-hidden bg-brand-50">
+                <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden bg-gradient-to-br from-brand-50 to-brand-100">
                   {p.image ? (
                     <Image
                       src={p.image}
@@ -98,7 +98,11 @@ export default function PersonGrid({ people, variant = "director" }: Props) {
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                  ) : null}
+                  ) : (
+                    <span className="font-display text-5xl font-bold tracking-wide text-brand/25">
+                      {initials(p.name)}
+                    </span>
+                  )}
                   {clickable && (
                     <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-900/80 to-transparent px-4 py-3 text-center text-xs font-semibold text-white opacity-0 transition group-hover:opacity-100">
                       Click to view bio

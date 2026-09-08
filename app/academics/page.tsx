@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
@@ -8,7 +8,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Academics",
   description:
-    "Home of academic excellence. Discover the STEM-driven curriculum and programs at Hopewell STEM Academy, Nakuru.",
+    "Home of academic excellence. Discover the STEM-driven curriculum and programs at Hopewell STEM Academy, Nakuru.",  alternates: { canonical: "/academics" },
 };
 
 const programs = [
@@ -50,7 +50,7 @@ export default function AcademicsPage() {
     <>
       <PageHero
         title="Home of Academic Excellence"
-        subtitle="Where passion meets innovation — building the next generation of leaders in science and technology."
+        subtitle="Where passion meets innovation â€” building the next generation of leaders in science and technology."
         image={heroes.academics}
         crumbs={[{ label: "Home", href: "/" }, { label: "Academics" }]}
       />
@@ -60,7 +60,7 @@ export default function AcademicsPage() {
           <SectionHeading
             eyebrow="Our Programs"
             title="A Pathway for Every Stage"
-            intro="From early childhood through junior high, our STEM-integrated curriculum grows with your child — combining strong academics with creativity, curiosity and real-world skills."
+            intro="From early childhood through junior high, our STEM-integrated curriculum grows with your child â€” combining strong academics with creativity, curiosity and real-world skills."
           />
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {programs.map((p) => (
@@ -84,7 +84,7 @@ export default function AcademicsPage() {
                 <div className="p-6">
                   <h3 className="font-display text-xl font-bold text-brand-700">{p.title}</h3>
                   <p className="mt-2 text-slate-600">{p.description}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 font-semibold text-accent">
+                  <span className="mt-4 inline-flex items-center gap-2 font-semibold text-gold-600 transition group-hover:gap-3">
                     Learn more
                     <span className="transition group-hover:translate-x-1">&rarr;</span>
                   </span>
@@ -95,12 +95,12 @@ export default function AcademicsPage() {
         </div>
       </section>
 
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading
             eyebrow="What is STEM?"
             title="The Core of Global Innovation"
-            intro="STEM — Science, Technology, Engineering and Mathematics — is the driving force behind modern innovation. It fosters problem-solving, creativity and analytical thinking, equipping students with the skills they need to thrive in a technology-driven world."
+            intro="STEM â€” Science, Technology, Engineering and Mathematics â€” is the driving force behind modern innovation. It fosters problem-solving, creativity and analytical thinking, equipping students with the skills they need to thrive in a technology-driven world."
           />
           <IconCardGrid items={why} />
         </div>

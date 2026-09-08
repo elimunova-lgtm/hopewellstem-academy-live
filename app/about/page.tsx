@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { FaBullseye, FaEye } from "react-icons/fa";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, CTASection } from "@/components/ui";
@@ -8,7 +8,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Hopewell STEM Academy's mission, vision, values and journey of excellence in STEM education in Nakuru, Kenya.",
+    "Learn about Hopewell STEM Academy's mission, vision, values and journey of excellence in STEM education in Nakuru, Kenya.",  alternates: { canonical: "/about" },
 };
 
 const impact = [
@@ -37,12 +37,12 @@ export default function AboutPage() {
             {
               icon: FaBullseye,
               title: "Our Mission",
-              text: "At Hopewell STEM Academy, we cultivate intellectually curious and capable young minds who become selfless contributors to local and global communities. We nurture ethical, compassionate leaders through a rigorous, innovative curriculum that integrates advanced STEM education with the humanities — inspiring the visionaries who will solve tomorrow's most pressing challenges.",
+              text: "At Hopewell STEM Academy, we cultivate intellectually curious and capable young minds who become selfless contributors to local and global communities. We nurture ethical, compassionate leaders through a rigorous, innovative curriculum that integrates advanced STEM education with the humanities â€” inspiring the visionaries who will solve tomorrow's most pressing challenges.",
             },
             {
               icon: FaEye,
               title: "Our Vision",
-              text: "We aspire to set the standard for 21st-century education in Kenya and beyond — an exceptional environment where academic excellence converges with lifelong friendships and personal growth. By emphasising both technical mastery and human connection, we equip students with the versatile toolkit they need for enduring success and careers of significant impact.",
+              text: "We aspire to set the standard for 21st-century education in Kenya and beyond â€” an exceptional environment where academic excellence converges with lifelong friendships and personal growth. By emphasising both technical mastery and human connection, we equip students with the versatile toolkit they need for enduring success and careers of significant impact.",
             },
           ].map(({ icon: Icon, title, text }) => (
             <div
@@ -60,7 +60,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="What Drives Us" title="Our Core Values" />
           <IconCardGrid items={coreValues} />
@@ -80,15 +80,15 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="section bg-slate-50">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="Our Story" title="Our Journey of Innovation" />
           <div className="mx-auto mt-12 max-w-3xl">
-            <ol className="relative border-l-2 border-brand-200 pl-8">
+            <ol className="relative border-l-2 border-gold/50 pl-8">
               {timeline.map((t) => (
                 <li key={t.year} className="mb-10 last:mb-0">
                   <span className="absolute -left-[0.6rem] flex h-5 w-5 items-center justify-center rounded-full border-4 border-white bg-gold" />
-                  <p className="text-sm font-bold uppercase tracking-wide text-accent">
+                  <p className="text-sm font-bold uppercase tracking-wide text-gold-600">
                     {t.year}
                   </p>
                   <h3 className="mt-1 font-display text-xl font-bold text-brand">{t.title}</h3>
@@ -109,7 +109,7 @@ export default function AboutPage() {
       </section>
 
       {/* Community Impact */}
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading
             eyebrow="Beyond the Classroom"
@@ -120,7 +120,7 @@ export default function AboutPage() {
             {impact.map((item) => (
               <div
                 key={item}
-                className="flex items-start gap-3 rounded-xl border-l-4 border-accent bg-white p-4 shadow-card"
+                className="flex items-start gap-3 rounded-xl border-l-4 border-gold-400 bg-white p-4 shadow-card"
               >
                 <p className="text-slate-600">{item}</p>
               </div>

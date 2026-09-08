@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, IntroSplit, CTASection } from "@/components/ui";
 import { heroes } from "@/lib/heroes";
@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Junior High School",
   description:
-    "Junior High at Hopewell STEM Academy — robotics, coding, engineering and scientific inquiry for future innovators.",
+    "Junior High at Hopewell STEM Academy â€” robotics, coding, engineering and scientific inquiry for future innovators.",  alternates: { canonical: "/academics/junior-high" },
 };
 
 const highlights = [
@@ -23,12 +23,12 @@ export default function JuniorHighPage() {
     <>
       <PageHero
         title="Junior High School"
-        subtitle="Innovation starts here — cultivating critical thinkers and future innovators."
+        subtitle="Innovation starts here â€” cultivating critical thinkers and future innovators."
         image={heroes.academicsJuniorHigh}
         crumbs={[{ label: "Home", href: "/" }, { label: "Academics", href: "/academics" }, { label: "Junior High School" }]}
       />
       <IntroSplit
-        eyebrow="Grades 7–9"
+        eyebrow="Grades 7â€“9"
         title="Shaping Tomorrow's Innovators"
         image={heroes.academicsJuniorHigh}
         paragraphs={[
@@ -37,7 +37,7 @@ export default function JuniorHighPage() {
         ]}
         features={["Robotics & coding", "Engineering projects", "Strong academics", "Career guidance"]}
       />
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="What We Offer" title="Learning That Inspires Innovation" />
           <IconCardGrid items={highlights} />

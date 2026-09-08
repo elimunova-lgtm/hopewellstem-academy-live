@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, IntroSplit, CTASection } from "@/components/ui";
 import { heroes } from "@/lib/heroes";
@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "STEM Initiative",
   description:
-    "Discover Hopewell STEM Academy's flagship STEM initiative — hands-on learning in robotics, coding, science and engineering.",
+    "Discover Hopewell STEM Academy's flagship STEM initiative â€” hands-on learning in robotics, coding, science and engineering.",  alternates: { canonical: "/discover/stem-initiative" },
 };
 
 const pillars = [
@@ -53,7 +53,7 @@ export default function StemInitiativePage() {
     <>
       <PageHero
         title="Our STEM Initiative"
-        subtitle="Where curiosity becomes capability — hands-on science, technology, engineering and mathematics for every learner."
+        subtitle="Where curiosity becomes capability â€” hands-on science, technology, engineering and mathematics for every learner."
         image={heroes.discoverStem}
         crumbs={[{ label: "Home", href: "/" }, { label: "Discover", href: "/discover" }, { label: "STEM Initiative" }]}
       />
@@ -64,7 +64,7 @@ export default function StemInitiativePage() {
         image={heroes.discoverStem}
         paragraphs={[
           "STEM is the foundation of innovation and progress. At Hopewell STEM Academy, we equip students with hands-on learning experiences that develop critical thinking, creativity and problem-solving.",
-          "Our curriculum integrates real-world applications across science, technology, engineering and mathematics, ensuring students are prepared for the careers of tomorrow — and inspired to lead them.",
+          "Our curriculum integrates real-world applications across science, technology, engineering and mathematics, ensuring students are prepared for the careers of tomorrow â€” and inspired to lead them.",
         ]}
         features={[
           "Project-based, hands-on learning",
@@ -74,7 +74,7 @@ export default function StemInitiativePage() {
         ]}
       />
 
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="What We Offer" title="The Pillars of Our STEM Program" />
           <IconCardGrid items={pillars} />

@@ -14,7 +14,7 @@ export const site = {
   tagline: "Building tomorrow's leaders today",
   description:
     "Hopewell STEM Academy is a leading international STEM school in Nakuru, Kenya, offering world-class education in Science, Technology, Engineering and Mathematics through hands-on, innovative learning.",
-  url: "https://hopewellstem.ac.ke",
+  url: "https://hopewellstemacademy.com",
   location: "Pipeline, Nakuru, Kenya",
   phone: "+254 112 183 663",
   phoneHref: "tel:+254112183663",
@@ -22,11 +22,21 @@ export const site = {
   email: "officeathopewell@gmail.com",
   emailHref: "mailto:officeathopewell@gmail.com",
   elearning: "https://elearninghopewell.netlify.app",
+  elimunova: "https://www.elimunova.com/",
   developer: {
     name: "InfinitiTech Solutions",
     url: "https://infinititechsolutions.org/",
   },
 } as const;
+
+/**
+ * Current admissions intake year. School intake planning rolls over in
+ * September (Term 3) when the following year's admissions open — e.g. from
+ * September 2026 the displayed intake is 2027.
+ */
+const now = new Date();
+export const intakeYear =
+  now.getMonth() >= 8 ? now.getFullYear() + 1 : now.getFullYear();
 
 export type SocialLink = {
   label: string;
@@ -117,6 +127,7 @@ export const navigation: NavItem[] = [
     href: "/get-involved",
     children: [
       { label: "Overview", href: "/get-involved" },
+      { label: "News & Blog", href: "/news" },
       { label: "Gallery", href: "/get-involved/gallery" },
       { label: "Calendar", href: "/get-involved/calendar" },
     ],

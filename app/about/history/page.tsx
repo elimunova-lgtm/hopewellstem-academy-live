@@ -8,7 +8,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Our History",
   description:
-    "Discover the journey, vision and milestones that have shaped Hopewell STEM Academy into a leading force in STEM education.",
+    "Discover the journey, vision and milestones that have shaped Hopewell STEM Academy into a leading force in STEM education.",  alternates: { canonical: "/about/history" },
 };
 
 const blocks = [
@@ -63,15 +63,15 @@ export default function HistoryPage() {
         </div>
       </section>
 
-      <section className="section bg-slate-50">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="Milestones" title="Key Moments in Our Journey" />
           <div className="mx-auto mt-12 max-w-3xl">
-            <ol className="relative border-l-2 border-brand-200 pl-8">
+            <ol className="relative border-l-2 border-gold/50 pl-8">
               {timeline.map((t) => (
                 <li key={t.year} className="mb-10 last:mb-0">
                   <span className="absolute -left-[0.6rem] flex h-5 w-5 items-center justify-center rounded-full border-4 border-white bg-gold" />
-                  <p className="text-sm font-bold uppercase tracking-wide text-accent">
+                  <p className="text-sm font-bold uppercase tracking-wide text-gold-600">
                     {t.year}
                   </p>
                   <h3 className="mt-1 font-display text-xl font-bold text-brand">{t.title}</h3>

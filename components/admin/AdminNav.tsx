@@ -9,6 +9,8 @@ const links = [
   { href: "/admin/events", label: "Events" },
   { href: "/admin/popups", label: "Pop-ups" },
   { href: "/admin/flyers", label: "Flyers" },
+  { href: "/admin/inquiries", label: "Inquiries" },
+  { href: "/admin/settings", label: "Settings" },
 ];
 
 export default function AdminNav() {

@@ -1,0 +1,10 @@
+/** Tiny inline SVG shown by <img> elements when a remote image fails to load. */
+export const IMAGE_FALLBACK =
+  "data:image/svg+xml;charset=utf-8," +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">` +
+      `<rect width="100%" height="100%" fill="#fbe5e5"/>` +
+      `<rect width="100%" height="6" fill="#D4AF37"/>` +
+      `<text x="50%" y="50%" font-family="Georgia, serif" font-size="30" fill="#8B0000" text-anchor="middle" dominant-baseline="middle">Hopewell STEM Academy</text>` +
+      `</svg>`,
+  );

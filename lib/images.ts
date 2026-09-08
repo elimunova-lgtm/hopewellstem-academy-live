@@ -1,16 +1,10 @@
 /**
  * Central image registry — all paths are Cloudinary public IDs.
  *
- * Convention: images are organised under the "stemhsa/" folder in Cloudinary.
- *   stemhsa/site/       — logos, favicon, partner logos
- *   stemhsa/heroes/     — page hero backgrounds
- *   stemhsa/gallery/    — gallery grid photos
- *   stemhsa/team/       — staff & director headshots
- *   stemhsa/levels/     — education level card images
- *   stemhsa/news/       — news card images
- *   stemhsa/events/     — event card images
- *
- * cldUrl() builds the full delivery URL with auto quality + format.
+ * Only public IDs that are VERIFIED to exist in the school's Cloudinary
+ * account are referenced here (the account holds 7 photos + logos + flyers).
+ * Missing originals have never existed on the account; swap any entry once the
+ * real photo is uploaded (see scripts/upload-public.mjs).
  */
 import { cldUrl } from "./cloudinary";
 
@@ -36,23 +30,23 @@ export const images = {
   },
 
   news: {
-    transport: img("stemhsa/gallery/discover-transport"),
-    bootcamp:  img("stemhsa/gallery/lab1"),
+    transport: img("stemhsa/gallery/img_0261"),
+    bootcamp:  img("stemhsa/heroes/lab3"),
     admission: img("stemhsa/heroes/academics-primary"),
-    robotics:  img("stemhsa/gallery/img_0225"),
+    robotics:  img("stemhsa/heroes/academics-junior"),
   },
 
   events: {
-    funday:   img("stemhsa/gallery/discover-events"),
-    bootcamp: img("stemhsa/gallery/lab2"),
-    sports:   img("stemhsa/gallery/IMG_0307"),
-    career:   img("stemhsa/gallery/IMG_1104"),
+    funday:   img("stemhsa/gallery/IMG_0355"),
+    bootcamp: img("stemhsa/heroes/lab3"),
+    sports:   img("stemhsa/gallery/img_0206"),
+    career:   img("stemhsa/heroes/academics-primary"),
   },
 
   history: [
-    img("stemhsa/gallery/img_0191"),
+    img("stemhsa/gallery/img_0261"),
     img("stemhsa/heroes/academics-primary"),
-    img("stemhsa/gallery/discover-events"),
+    img("stemhsa/gallery/IMG_0355"),
   ],
 
   partners: {
@@ -62,33 +56,33 @@ export const images = {
   },
 } as const;
 
-/** Page hero backgrounds — one distinct school photo per page */
+/** Page hero images — one distinct school photo per page */
 export const heroes = {
   about:           img("stemhsa/heroes/academics-primary"),
-  aboutDirectors:  img("stemhsa/heroes/IMG_1098"),
-  aboutStaff:      img("stemhsa/heroes/IMG_1101"),
-  aboutHistory:    img("stemhsa/heroes/IMG_1121"),
-  aboutPolicies:   img("stemhsa/heroes/IMG_1132"),
+  aboutDirectors:  img("stemhsa/gallery/img_0206"),
+  aboutStaff:      img("stemhsa/heroes/academics-junior"),
+  aboutHistory:    img("stemhsa/gallery/IMG_0355"),
+  aboutPolicies:   img("stemhsa/gallery/img_0261"),
 
-  discover:              img("stemhsa/heroes/IMG_0361"),
-  discoverStem:          img("stemhsa/gallery/discover-stem"),
-  discoverSports:        img("stemhsa/gallery/discover-sports"),
+  discover:              img("stemhsa/gallery/discover-clubs"),
+  discoverStem:          img("stemhsa/heroes/lab3"),
+  discoverSports:        img("stemhsa/gallery/img_0206"),
   discoverClubs:         img("stemhsa/gallery/discover-clubs"),
-  discoverGuidance:      img("stemhsa/gallery/IMG_1104"),
-  discoverFeesTransport: img("stemhsa/gallery/discover-transport"),
-  discoverComputerLab:   img("stemhsa/gallery/lab1"),
-  discoverLibrary:       img("stemhsa/gallery/discover-library"),
-  discoverEventsGround:  img("stemhsa/heroes/IMG_0298"),
-  discoverUniform:       img("stemhsa/gallery/discover-uniform"),
+  discoverGuidance:      img("stemhsa/heroes/academics-junior"),
+  discoverFeesTransport: img("stemhsa/gallery/img_0261"),
+  discoverComputerLab:   img("stemhsa/heroes/lab3"),
+  discoverLibrary:       img("stemhsa/gallery/IMG_0355"),
+  discoverEventsGround:  img("stemhsa/gallery/img_0206"),
+  discoverUniform:       img("stemhsa/heroes/academics-primary"),
 
-  academics:           img("stemhsa/heroes/IMG_1098"),
-  academicsPlaygroup:  img("stemhsa/gallery/img_0191"),
+  academics:           img("stemhsa/heroes/lab3"),
+  academicsPlaygroup:  img("stemhsa/gallery/img_0261"),
   academicsPrimary:    img("stemhsa/heroes/academics-primary"),
   academicsJuniorHigh: img("stemhsa/heroes/academics-junior"),
 
-  getInvolved:        img("stemhsa/heroes/IMG_1134"),
-  getInvolvedGallery: img("stemhsa/heroes/IMG_0345"),
-  getInvolvedCalendar:img("stemhsa/heroes/IMG_0313"),
+  getInvolved:        img("stemhsa/gallery/img_0206"),
+  getInvolvedGallery: img("stemhsa/gallery/IMG_0355"),
+  getInvolvedCalendar:img("stemhsa/gallery/img_0261"),
 
-  contact: img("stemhsa/heroes/IMG_1121"),
+  contact: img("stemhsa/heroes/academics-junior"),
 } as const;

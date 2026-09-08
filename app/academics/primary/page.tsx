@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, IntroSplit, CTASection } from "@/components/ui";
 import { heroes } from "@/lib/heroes";
@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Primary School",
   description:
-    "Our primary school builds strong academic foundations through a STEM-integrated, competency-based curriculum.",
+    "Our primary school builds strong academic foundations through a STEM-integrated, competency-based curriculum.",  alternates: { canonical: "/academics/primary" },
 };
 
 const highlights = [
@@ -28,16 +28,16 @@ export default function PrimaryPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Academics", href: "/academics" }, { label: "Primary School" }]}
       />
       <IntroSplit
-        eyebrow="Grades 1–6"
+        eyebrow="Grades 1â€“6"
         title="Where Strong Learners Are Made"
         image={heroes.academicsPrimary}
         paragraphs={[
           "Our primary school delivers a rich, competency-based curriculum that develops literacy, numeracy and a genuine love of science, technology and discovery. Learning is active and engaging, helping every child build the knowledge and skills they need to thrive.",
-          "Beyond academics, we nurture curiosity, creativity and character — supported by dedicated teachers, hands-on STEM activities and a vibrant co-curricular program.",
+          "Beyond academics, we nurture curiosity, creativity and character â€” supported by dedicated teachers, hands-on STEM activities and a vibrant co-curricular program.",
         ]}
         features={["Competency-based curriculum", "STEM-integrated lessons", "Caring, qualified teachers", "Rich co-curricular life"]}
       />
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="What We Offer" title="A Well-Rounded Education" />
           <IconCardGrid items={highlights} />

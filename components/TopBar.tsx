@@ -4,31 +4,31 @@ import SocialLinks from "./SocialLinks";
 
 export default function TopBar() {
   return (
-    <div className="bg-brand-900 text-white">
-      <div className="container-page flex flex-col items-center justify-between gap-3 py-2 text-sm md:flex-row">
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-white/90">
-          <a href={site.phoneHref} className="flex items-center gap-2 hover:text-white">
-            <FaPhone className="h-3.5 w-3.5" />
+    <div className="border-b-4 border-gold-500 bg-brand">
+      <div className="container-page flex min-h-9 flex-col items-center justify-between gap-1 py-1.5 text-sm text-white md:h-10 md:flex-row md:gap-3 md:py-0">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+          <a href={site.phoneHref} className="flex items-center gap-2 transition hover:text-gold-400">
+            <FaPhone className="h-3.5 w-3.5 text-gold-400" />
             {site.phone}
           </a>
-          <a href={site.emailHref} className="flex items-center gap-2 hover:text-white">
-            <FaEnvelope className="h-3.5 w-3.5" />
+          <a href={site.emailHref} className="flex items-center gap-2 transition hover:text-gold-400">
+            <FaEnvelope className="h-3.5 w-3.5 text-gold-400" />
             {site.email}
           </a>
           <span className="hidden items-center gap-2 lg:flex">
-            <FaMapMarkerAlt className="h-3.5 w-3.5" />
+            <FaMapMarkerAlt className="h-3.5 w-3.5 text-gold-400" />
             {site.location}
           </span>
         </div>
         <div className="flex items-center gap-3">
           <SocialLinks />
           <a
-            href={site.elearning}
+            href={site.elimunova}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-gold px-4 py-1.5 text-xs font-semibold text-brand-950 transition hover:-translate-y-0.5 hover:brightness-110"
+            className="rounded-full bg-gold-500 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-950 shadow-card-soft transition hover:-translate-y-0.5 hover:bg-gold-400"
           >
-            E-Learning
+            Elimu Nova Platform
           </a>
         </div>
       </div>

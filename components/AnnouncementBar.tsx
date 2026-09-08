@@ -1,5 +1,6 @@
-const message =
-  "Applications for the 2026 academic year are now open!  •  Join our upcoming Open Day  •  Enrol now and give your child a future-ready STEM education.";
+import { intakeYear } from "@/lib/site";
+
+const message = `Applications for the ${intakeYear} academic year are now open!  •  Join our upcoming Open Day  •  Enrol now and give your child a future-ready STEM education.`;
 
 export default function AnnouncementBar() {
   return (

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, CTASection } from "@/components/ui";
 import { heroes } from "@/lib/heroes";
@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Get Involved",
   description:
-    "Join our vibrant community of innovators, creators and future leaders at Hopewell STEM Academy, Nakuru.",
+    "Join our vibrant community of innovators, creators and future leaders at Hopewell STEM Academy, Nakuru.",  alternates: { canonical: "/get-involved" },
 };
 
 const stats = [
@@ -18,7 +18,7 @@ const stats = [
 
 const ways = [
   { icon: "FaFlask", title: "STEM Programs", description: "Engage with hands-on science, technology, engineering and mathematics designed to foster critical thinking and innovation." },
-  { icon: "FaRobot", title: "Robotics Teams", description: "Build, program and compete — developing technical and teamwork skills while solving real engineering challenges." },
+  { icon: "FaRobot", title: "Robotics Teams", description: "Build, program and compete â€” developing technical and teamwork skills while solving real engineering challenges." },
   { icon: "FaCode", title: "Coding & Development", description: "Learn industry-standard programming and create apps, games and software that solve real problems." },
   { icon: "FaStar", title: "Talent Empowerment", description: "Discover and nurture your unique talents through programs that help students develop their strengths." },
   { icon: "FaGlobeAfrica", title: "Cultural Initiatives", description: "Celebrate diversity and global awareness, connecting STEM education with worldwide perspectives." },
@@ -46,7 +46,7 @@ export default function GetInvolvedPage() {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 to-white p-8 text-center shadow-card"
+                className="rounded-3xl border border-brand-100 bg-cream p-8 text-center shadow-card"
               >
                 <p className="font-display text-4xl font-extrabold text-brand-700">{s.value}</p>
                 <p className="mt-2 text-sm font-medium uppercase tracking-wide text-slate-500">
@@ -58,7 +58,7 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="Opportunities" title="Ways to Get Involved" />
           <IconCardGrid items={ways} />

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FaExpand, FaFilePdf } from "react-icons/fa";
 import ImageLightbox from "@/components/ImageLightbox";
+import { IMAGE_FALLBACK } from "@/lib/placeholder-image";
 import { isPdfUrl } from "@/lib/uploads";
 
 type ClickableImageProps = {
@@ -50,8 +51,15 @@ export default function ClickableImage({
         className={`group relative block h-full w-full overflow-hidden ${className}`}
         aria-label={`View full image: ${alt}`}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt={alt} className={imageClassName} />
+        <img
+          src={src}
+          alt={alt}
+          className={imageClassName}
+          onError={(event) => {
+            const target = event.currentTarget;
+            if (target.src !== IMAGE_FALLBACK) target.src = IMAGE_FALLBACK;
+          }}
+        />
         {showExpandHint ? (
           <span className="absolute inset-0 flex items-center justify-center bg-black/0 transition group-hover:bg-black/30">
             <FaExpand className="h-6 w-6 text-white opacity-0 transition group-hover:opacity-100" />

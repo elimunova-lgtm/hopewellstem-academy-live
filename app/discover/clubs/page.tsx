@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { SectionHeading, IconCardGrid, IntroSplit, CTASection } from "@/components/ui";
 import { heroes } from "@/lib/heroes";
@@ -6,7 +6,7 @@ import { heroes } from "@/lib/heroes";
 export const metadata: Metadata = {
   title: "Clubs",
   description:
-    "Explore the vibrant clubs and societies at Hopewell STEM Academy that nurture talent, teamwork and leadership.",
+    "Explore the vibrant clubs and societies at Hopewell STEM Academy that nurture talent, teamwork and leadership.",  alternates: { canonical: "/discover/clubs" },
 };
 
 const clubs = [
@@ -37,7 +37,7 @@ export default function ClubsPage() {
         ]}
         features={["Student-led initiatives", "Skilled mentors", "Inter-school competitions", "Leadership opportunities"]}
       />
-      <section className="section bg-gradient-to-br from-brand-50 to-white">
+      <section className="section bg-cream">
         <div className="container-page">
           <SectionHeading eyebrow="Get Involved" title="Our Clubs" />
           <IconCardGrid items={clubs} />

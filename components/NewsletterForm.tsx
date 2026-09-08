@@ -32,7 +32,7 @@ export default function NewsletterForm() {
           />
           <button
             type="submit"
-            className="rounded-md bg-accent px-3 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+            className="rounded-md bg-gold px-3 py-2 text-sm font-semibold text-brand-950 transition hover:-translate-y-0.5 hover:brightness-110"
           >
             Subscribe
           </button>

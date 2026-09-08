@@ -20,6 +20,9 @@ model NewsPost {
   excerpt   String
   image     String
   dateLabel String
+  slug      String?  @unique
+  content   String   @default("")
+  category  String   @default("News")
   published Boolean  @default(true)
   sortOrder Int      @default(0)
   createdAt DateTime @default(now())
@@ -65,4 +68,17 @@ model Flyer {
   sortOrder Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Inquiry {
+  id         String   @id @default(cuid())
+  parentName String
+  phone      String
+  email      String?
+  childName  String?
+  childLevel String?
+  message    String   @default("")
+  status     String   @default("new")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }

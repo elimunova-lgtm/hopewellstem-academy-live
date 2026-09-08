@@ -114,6 +114,9 @@ export type NewsItem = {
   date: string;
   excerpt: string;
   image: string;
+  slug?: string;
+  category?: string;
+  content?: string;
 };
 
 export const news: NewsItem[] = [
@@ -123,6 +126,10 @@ export const news: NewsItem[] = [
     excerpt:
       "Reliable and efficient student transport services launched, ensuring safe and timely travel to and from school.",
     image: images.news.transport,
+    slug: "reliable-student-transport",
+    category: "News",
+    content:
+      "Safety on the road starts before the school day begins.\n\nHopewell STEM Academy has launched dependable student transport services covering routes across Nakuru, so families can trust that their children arrive on time and return home safely.\n\nEvery vehicle is supervised, seat-belted and tracked, giving parents peace of mind throughout the school year.",
   },
   {
     title: "Holiday Robotics Bootcamp",
@@ -130,6 +137,10 @@ export const news: NewsItem[] = [
     excerpt:
       "Join us and ignite your child's imagination with robotics during our hands-on holiday bootcamp.",
     image: images.news.bootcamp,
+    slug: "holiday-robotics-bootcamp",
+    category: "News",
+    content:
+      "Learning never stops at Hopewell STEM Academy — even during the holidays.\n\nOur hands-on robotics bootcamp invites students to design, build and program their own robots, guided by expert STEM facilitators.\n\nThrough daily engineering challenges, coding sessions and friendly robot battles, children develop problem-solving skills, creativity and teamwork while having a great time.",
   },
   {
     title: "Admissions Ongoing 2025",
@@ -137,6 +148,10 @@ export const news: NewsItem[] = [
     excerpt:
       "Enrol now and let your child learn cutting-edge technology, problem solving and collaboration skills.",
     image: images.news.admission,
+    slug: "admissions-ongoing-2025",
+    category: "News",
+    content:
+      "New families are joining Hopewell STEM Academy every term.\n\nWe offer playgroup, primary school and junior high school programmes built around hands-on STEM learning — coding, robotics, science and engineering taught through real projects.\n\nContact our admissions team to arrange a campus visit, assessment and interview, and secure your child's place today.",
   },
   {
     title: "Robotics Team Victory",
@@ -144,6 +159,43 @@ export const news: NewsItem[] = [
     excerpt:
       "Our robotics team secured first place in the National Robotics Championship.",
     image: images.news.robotics,
+    slug: "robotics-team-victory",
+    category: "News",
+    content:
+      "Hopewell STEM Academy's robotics team has done it again.\n\nThe team secured first place at the National Robotics Championship, outperforming schools from across Kenya with an original, competition-ready robot built entirely by our students.\n\nThis victory reflects our approach: giving every learner a chance to build, code and innovate — and then backing them to shine on the national stage.",
+  },
+  {
+    title: "Why Hopewell STEM Academy Is One of the Best Schools in Nakuru, Kenya",
+    date: "September 8, 2026",
+    excerpt:
+      "What makes a school 'the best' isn't just results — it's how children are taught. Here's why parents rank Hopewell STEM Academy among the best schools in Nakuru.",
+    image: images.news.robotics,
+    slug: "why-hopewell-stem-academy-is-one-of-the-best-schools-in-nakuru",
+    category: "Blog",
+    content:
+      "When parents search for the best schools in Nakuru, they are really asking one question: which school will give my child the strongest start in life?\n\nAt Hopewell STEM Academy, we believe the answer is a hands-on STEM education delivered by teachers who genuinely know each child. Located in Pipeline, Nakuru, we serve families from across the county who want more than rote learning.\n\nOur classrooms look different. Learners build and program robots, run science investigations, write their first code and present their work — not just once a term, but every single week. Friday is our famous STEM Day, when the whole school engages in project-based innovation.\n\nWe combine this modern, technology-rich curriculum with the values parents expect from a private school in Nakuru: discipline, mentoring, safe transport, nutritious meals and open communication with the family.\n\nBecause classes are small, teachers track each child's progress closely. Struggles are caught early and strengths are stretched. That is why our students excel in national STEM competitions and why families recommend us to friends and relatives.\n\nChoosing a school is one of the biggest decisions a parent makes. We warmly invite you to visit Pipeline, meet our team and see for yourself why Hopewell STEM Academy is consistently counted among the best STEM schools in Nakuru and Kenya.",
+  },
+  {
+    title: "What Is STEM Education and Why It Matters for Kenyan Schools",
+    date: "September 5, 2026",
+    excerpt:
+      "STEM stands for Science, Technology, Engineering and Mathematics. Learn why Kenya's top STEM schools teach it through hands-on projects — and what it means for your child.",
+    image: images.news.transport,
+    slug: "what-is-stem-education-and-why-it-matters-for-kenyan-schools",
+    category: "Blog",
+    content:
+      "STEM education is the teaching of Science, Technology, Engineering and Mathematics as connected, hands-on subjects — not as four separate lists of facts.\n\nIn a STEM school in Kenya like Hopewell STEM Academy, your child might design a solar-powered model in science class, program it using code learned the same week, and present the working prototype to their classmates. Learning becomes memorable because children do, not just read.\n\nWhy does this matter? Kenya's economy is digitalising quickly. Careers in medicine, software, engineering, agriculture and business increasingly require technological skills. Children who learn to think like scientists and engineers early develop problem-solving habits that serve them for life.\n\nResearch consistently shows project-based STEM learning improves critical thinking, collaboration and confidence. Students who build things are braver with new challenges — an advantage in national exams and beyond.\n\nAt Hopewell, STEM runs from playgroup through junior high. Even our youngest learners explore through discovery play, while older students take dedicated robotics, coding and advanced science lessons in our computer lab.\n\nThe future belongs to innovators. A quality STEM school gives Kenyan children the tools to shape it.",
+  },
+  {
+    title: "How to Choose the Right School in Nakuru: A Parent's Guide",
+    date: "September 1, 2026",
+    excerpt:
+      "From curriculum and class sizes to transport and values — a simple checklist to help Nakuru parents choose the best school for their child.",
+    image: images.news.admission,
+    slug: "how-to-choose-the-right-school-in-nakuru",
+    category: "Blog",
+    content:
+      "With so many schools in Nakuru, how does a parent choose wisely? Start with your child in mind, then work through this checklist.\n\n1. Look beyond exam results. Good results matter, but the best schools in Nakuru also develop curiosity, resilience and character. Ask what kind of learner your child will become.\n\n2. Inspect the teaching approach. Is learning active or passive? A school that uses labs, projects, clubs and technology — like Hopewell STEM Academy's robotics and coding programmes — prepares children for the way the world actually works.\n\n3. Check class sizes. Smaller classes mean more individual attention, more speaking up and stronger teacher-child relationships.\n\n4. Consider the whole day. Safe transport, nutritious meals, sports, clubs and after-school activities all shape your child's experience. Visit at pick-up time and watch how the school really operates.\n\n5. Walk the campus. Meet the teachers, look at the classrooms and the computer lab, and ask how the school handles safety, discipline and communication with parents.\n\n6. Talk to current parents. Honest feedback from families already enrolled is worth more than any brochure.\n\n7. Match the values. The school you choose should reflect the discipline, faith and character you want for your family.\n\nChoosing well takes effort, but the right school changes a child's future. If you are comparing schools in Nakuru, we would be delighted to show you around Hopewell STEM Academy and answer your questions — no pressure, just facts.",
   },
 ];
 
@@ -206,38 +258,50 @@ export const testimonials: Testimonial[] = [
   {
     name: "Margaret Wanjiru",
     initials: "MW",
-    date: "February 15, 2024",
-    text: "The STEM program at Hopewell has transformed my daughter's approach to learning. The teachers are exceptional, and the hands-on learning has sparked a real interest in science and technology.",
+    date: "August 2026",
+    text: "The STEM program at Hopewell has transformed my daughter's approach to learning. The hands-on science and coding classes have sparked a real interest in technology — and she comes home excited about STEM Fridays.",
   },
   {
     name: "John Kipchoge",
     initials: "JK",
-    date: "January 20, 2024",
-    text: "The robotics program here is outstanding. My son has developed incredible problem-solving skills and confidence. The focus on practical applications truly prepares students for the future.",
+    date: "July 2026",
+    text: "The robotics program here is outstanding. My son has developed incredible problem-solving skills and confidence, and he loves the Debate & Mjadala club. The focus on practical applications truly prepares students for the future.",
   },
   {
     name: "Elizabeth Omondi",
     initials: "EO",
-    date: "January 5, 2024",
-    text: "The innovative teaching methods and focus on practical learning have helped my children develop critical thinking skills. The school's commitment to excellence is evident in everything they do.",
-  },
-  {
-    name: "Peter Maina",
-    initials: "PM",
-    date: "December 12, 2023",
-    text: "The teachers' dedication to student success is remarkable. They provide regular feedback and are always available to address parents' concerns. The academic standards are high but achievable.",
+    date: "June 2026",
+    text: "From the Swimming club on a gentle afternoon to the structured academic day, my children are happy at Hopewell. The innovative teaching methods have helped them grow into confident, critical thinkers.",
   },
   {
     name: "Grace Kimani",
     initials: "GK",
-    date: "December 8, 2023",
-    text: "The extracurricular activities and STEM clubs have given my children opportunities to explore their interests. The science fair projects are particularly impressive and well organised.",
+    date: "May 2026",
+    text: "The extracurricular activities and STEM clubs give my children opportunities to explore their interests. Games Day on Thursdays is the highlight of their week, and the science fair projects are impressively well organised.",
+  },
+  {
+    name: "Peter Maina",
+    initials: "PM",
+    date: "December 2025",
+    text: "The teachers' dedication to student success is remarkable. They provide regular feedback and are always available to address parents' concerns. The academic standards are high but achievable.",
   },
   {
     name: "David Mutua",
     initials: "DM",
-    date: "November 15, 2023",
-    text: "The school's integration of technology in learning is impressive. The computer programming classes have given my son skills that are relevant in today's digital world.",
+    date: "November 2025",
+    text: "The school's integration of technology in learning is impressive. The computer and coding classes have given my son skills that are relevant in today's digital world.",
+  },
+  {
+    name: "Sarah Anyango",
+    initials: "SA",
+    date: "March 2025",
+    text: "As a working parent, the supervised transport and clear communication give me total peace of mind. My daughter's safety and wellbeing are clearly the school's highest priority.",
+  },
+  {
+    name: "Brian Otieno",
+    initials: "BO",
+    date: "June 2024",
+    text: "What stands out is the blend of academics and character. The Scouts & Environmental club has made my son more responsible and eager to learn. Hopewell truly builds the whole child.",
   },
 ];
 
